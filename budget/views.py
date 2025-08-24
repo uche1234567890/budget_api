@@ -6,7 +6,7 @@ class CategoryListCreateView(generics.ListCreateAPIView):
     serializer_class = CategorySerializer
 
     def get_queryset(self):
-        return Category.objects.filter(user=self.request.user)
+        return Category.objects.filter(user=self.request.user).order_by('-created_at')
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -21,7 +21,7 @@ class TransactionListCreateView(generics.ListCreateAPIView):
     serializer_class = TransactionSerializer
 
     def get_queryset(self):
-        return Transaction.objects.filter(user=self.request.user)
+        return Transaction.objects.filter(user=self.request.user).order_by('-created_at')
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
