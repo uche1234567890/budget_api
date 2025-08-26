@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pkl
+.DS_Store
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Database
+db.sqlite3
+
+# VSCode settings
+.vscode/
+
+# Migrations cache
+*/migrations/__pycache__/
+
+# Logs
+*.log
