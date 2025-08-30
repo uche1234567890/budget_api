@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (
     CategoryListCreateView, CategoryDetailView,
     TransactionListCreateView, TransactionDetailView,
-    SummaryView
+    SummaryView , RegisterView, LoginView
 )
 
 urlpatterns = [
@@ -11,4 +11,6 @@ urlpatterns = [
     path("transactions/", TransactionListCreateView.as_view(), name="transaction-list"),
     path("transactions/<int:pk>/", TransactionDetailView.as_view(), name="transaction-detail"),
     path("summary/", SummaryView.as_view(), name="summary"),
+    path("auth/register/", RegisterView.as_view(), name="register"),
+    path("auth/login/", LoginView.as_view(), name="login"),
 ]
